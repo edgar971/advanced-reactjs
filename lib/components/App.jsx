@@ -16,10 +16,10 @@ class App extends Component {
 
   render() {
     return (
-     <ArticleList 
-      articles={this.state.articles}
-      authors={this.state.authors}
-     />
+      <ArticleList
+        articles={this.state.articles}
+        authors={this.state.authors}
+      />
     );
   }
 }
