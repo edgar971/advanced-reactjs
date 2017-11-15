@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleList renders correctly 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "borderBottomColor": "gray",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": 1,
+        "marginBottom": 10,
+        "paddingBottom": 10,
+      }
+    }
+  >
+    <h3
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      best title a
+    </h3>
+    <p
+      style={
+        Object {
+          "fontSize": ".85em",
+        }
+      }
+    >
+      <small>
+        Invalid Date
+      </small>
+    </p>
+    <div
+      style={
+        Object {
+          "paddingBottom": 10,
+          "paddingTop": 10,
+        }
+      }
+    >
+      <a
+        href={undefined}
+      >
+        undefined undefined
+      </a>
+    </div>
+    <div
+      style={
+        Object {
+          "paddingLeft": 20,
+        }
+      }
+    >
+      <p />
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "borderBottomColor": "gray",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": 1,
+        "marginBottom": 10,
+        "paddingBottom": 10,
+      }
+    }
+  >
+    <h3
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      best title b
+    </h3>
+    <p
+      style={
+        Object {
+          "fontSize": ".85em",
+        }
+      }
+    >
+      <small>
+        Invalid Date
+      </small>
+    </p>
+    <div
+      style={
+        Object {
+          "paddingBottom": 10,
+          "paddingTop": 10,
+        }
+      }
+    >
+      <a
+        href={undefined}
+      >
+        undefined undefined
+      </a>
+    </div>
+    <div
+      style={
+        Object {
+          "paddingLeft": 20,
+        }
+      }
+    >
+      <p />
+    </div>
+  </div>
+</div>
+`;
