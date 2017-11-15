@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
-import DataApi from 'state-api';
-import { data } from '../testData';
 import ArticleList from './ArticleList';
 
-const Api = new DataApi(data);
-
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      articles: Api.getArticles(),
-      authors: Api.getAuthors()
-    };
+  
+  state = {
+    articles: this.props.initialData.articles,
+    authors: this.props.initialData.authors
   }
+
   articleActions = {
     lookupAuthor: (authorId) => this.state.authors[authorId]
   }
