@@ -1,116 +1,177 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ArticleList renders correctly 1`] = `
-<div>
-  <div
-    style={
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ArticleList
+    articleActions={
       Object {
-        "borderBottomColor": "gray",
-        "borderBottomStyle": "solid",
-        "borderBottomWidth": 1,
-        "marginBottom": 10,
-        "paddingBottom": 10,
+        "lookupAuthor": [Function],
       }
     }
-  >
-    <h3
-      style={
-        Object {
-          "fontWeight": "bold",
-        }
-      }
-    >
-      best title a
-    </h3>
-    <p
-      style={
-        Object {
-          "fontSize": ".85em",
-        }
-      }
-    >
-      <small>
-        Invalid Date
-      </small>
-    </p>
-    <div
-      style={
-        Object {
-          "paddingBottom": 10,
-          "paddingTop": 10,
-        }
-      }
-    >
-      <a
-        href={undefined}
-      >
-        undefined undefined
-      </a>
-    </div>
-    <div
-      style={
-        Object {
-          "paddingLeft": 20,
-        }
-      }
-    >
-      <p />
-    </div>
-  </div>
-  <div
-    style={
+    articles={
       Object {
-        "borderBottomColor": "gray",
-        "borderBottomStyle": "solid",
-        "borderBottomWidth": 1,
-        "marginBottom": 10,
-        "paddingBottom": 10,
+        "a": Object {
+          "body": "cool body",
+          "date": "Wed Jul 13 2016 00:00:00 GMT+0000 (UTC)",
+          "id": "a",
+          "title": "best title a",
+        },
+        "b": Object {
+          "body": "cool body",
+          "date": "Wed Jul 13 2016 00:00:00 GMT+0000 (UTC)",
+          "id": "b",
+          "title": "best title b",
+        },
       }
     }
-  >
-    <h3
-      style={
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Article
+          article={
+            Object {
+              "body": "cool body",
+              "date": "Wed Jul 13 2016 00:00:00 GMT+0000 (UTC)",
+              "id": "a",
+              "title": "best title a",
+            }
+          }
+        />,
+        <Article
+          article={
+            Object {
+              "body": "cool body",
+              "date": "Wed Jul 13 2016 00:00:00 GMT+0000 (UTC)",
+              "id": "b",
+              "title": "best title b",
+            }
+          }
+        />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "a",
+        "nodeType": "function",
+        "props": Object {
+          "article": Object {
+            "body": "cool body",
+            "date": "Wed Jul 13 2016 00:00:00 GMT+0000 (UTC)",
+            "id": "a",
+            "title": "best title a",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "b",
+        "nodeType": "function",
+        "props": Object {
+          "article": Object {
+            "body": "cool body",
+            "date": "Wed Jul 13 2016 00:00:00 GMT+0000 (UTC)",
+            "id": "b",
+            "title": "best title b",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Article
+            article={
+              Object {
+                "body": "cool body",
+                "date": "Wed Jul 13 2016 00:00:00 GMT+0000 (UTC)",
+                "id": "a",
+                "title": "best title a",
+              }
+            }
+          />,
+          <Article
+            article={
+              Object {
+                "body": "cool body",
+                "date": "Wed Jul 13 2016 00:00:00 GMT+0000 (UTC)",
+                "id": "b",
+                "title": "best title b",
+              }
+            }
+          />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
         Object {
-          "fontWeight": "bold",
-        }
-      }
-    >
-      best title b
-    </h3>
-    <p
-      style={
+          "instance": null,
+          "key": "a",
+          "nodeType": "function",
+          "props": Object {
+            "article": Object {
+              "body": "cool body",
+              "date": "Wed Jul 13 2016 00:00:00 GMT+0000 (UTC)",
+              "id": "a",
+              "title": "best title a",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
         Object {
-          "fontSize": ".85em",
-        }
-      }
-    >
-      <small>
-        Invalid Date
-      </small>
-    </p>
-    <div
-      style={
-        Object {
-          "paddingBottom": 10,
-          "paddingTop": 10,
-        }
-      }
-    >
-      <a
-        href={undefined}
-      >
-        undefined undefined
-      </a>
-    </div>
-    <div
-      style={
-        Object {
-          "paddingLeft": 20,
-        }
-      }
-    >
-      <p />
-    </div>
-  </div>
-</div>
+          "instance": null,
+          "key": "b",
+          "nodeType": "function",
+          "props": Object {
+            "article": Object {
+              "body": "cool body",
+              "date": "Wed Jul 13 2016 00:00:00 GMT+0000 (UTC)",
+              "id": "b",
+              "title": "best title b",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
 `;
