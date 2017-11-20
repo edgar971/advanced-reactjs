@@ -54,6 +54,4 @@ function extraProps(store, originalProps) {
   };
 }
 
-
-
 export default storeProvider(extraProps)(Article);
