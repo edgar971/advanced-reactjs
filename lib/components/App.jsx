@@ -33,22 +33,20 @@ class App extends Component {
   state = this.props.store.getState();
 
   render() {
-    let { searchTerm, articles, timestamp } = this.state;
+    let { searchTerm, articles } = this.state;
+    const searchRE = new RegExp(searchTerm, 'i');
+
     if(searchTerm) {
       articles = pickBy(articles, (article) => {
-        return article.title.match(searchTerm)
-          || article.body.match(searchTerm);
+        return article.title.match(searchRE) || article.body.match(searchRE);
       });
     }
 
     return (
       <div>
         <Timestamp />
-        <SearchBar doSearch={this.props.store.setSearchTerm} />
-        <ArticleList
-          articles={articles}
-          store={this.props.store}
-        />
+        <SearchBar />
+        <ArticleList articles={articles} />
       </div>
     );
   }
