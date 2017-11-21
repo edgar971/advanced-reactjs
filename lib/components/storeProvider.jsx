@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { Component as ReactComponent } from 'react';
 import PropTypes from 'prop-types';
 
 const storeProvider = (extraProps) => (Component) => {
-  const WithStore = (props, { store }) => 
-    <Component {...props} {...extraProps(store, props)} store={store} />;
+  return class extends ReactComponent {
+    static contextTypes = {
+      store: PropTypes.object
+    };
+    static displayName = `${Component.name}Container`;
 
-  WithStore.contextTypes = {
-    store: PropTypes.object
+    render() {
+      return <Component 
+        {...this.props} 
+        {...extraProps(this.context.store, this.props)} 
+        store={this.context.store} />;
+    } 
   };
-
-  WithStore.displayName = `${Component.name}Container`;
-
-  return WithStore;
 };
 
 export default storeProvider;

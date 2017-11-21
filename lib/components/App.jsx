@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import pickBy from 'lodash.pickby';
 import ArticleList from './ArticleList';
 import SearchBar from './SearchBar';
+import Timestamp from './Timestamp';
 
 class App extends Component {
   static childContextTypes = {
@@ -21,6 +22,7 @@ class App extends Component {
 
   componentDidMount() {
     this.subscriptionId = this.props.store.subscribe(this.onStoreChange);
+    this.props.store.startClock();
   }
 
   componentWillUnmount() {
@@ -31,7 +33,7 @@ class App extends Component {
   state = this.props.store.getState();
 
   render() {
-    let { searchTerm, articles } = this.state;
+    let { searchTerm, articles, timestamp } = this.state;
     if(searchTerm) {
       articles = pickBy(articles, (article) => {
         return article.title.match(searchTerm)
@@ -41,6 +43,7 @@ class App extends Component {
 
     return (
       <div>
+        <Timestamp />
         <SearchBar doSearch={this.props.store.setSearchTerm} />
         <ArticleList
           articles={articles}
