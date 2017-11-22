@@ -6,6 +6,7 @@ const storeProvider = (extraProps = () => {}) => (Component) => {
     static contextTypes = {
       store: PropTypes.object
     };
+
     static displayName = `${Component.name}Container`;
 
     render() {

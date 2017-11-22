@@ -1,6 +1,7 @@
 const path = require('path');
 
 const config = {
+  devtool: 'cheap-module-source-map',
   resolve: {
     extensions: ['.json', '.js', '.jsx'],
     modules: [

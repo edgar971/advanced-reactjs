@@ -10,7 +10,6 @@ const ArticleList = ({ articles }) => {
           article={article}
         />
       )}
-     
     </div>
   );
 };
