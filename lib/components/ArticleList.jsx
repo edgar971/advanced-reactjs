@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import Article from './Article';
 
-const ArticleList = ({ articles }) => {
-  return (
-    <div>
-      {Object.values(articles).map((article) =>
-        <Article
-          key={article.id}
-          article={article}
-        />
-      )}
-    </div>
-  );
-};
+class ArticleList extends PureComponent {
+  render() {
+    const { articles } = this.props; 
+    return (
+      <div>
+        {Object.values(articles).map((article) =>
+          <Article
+            key={article.id}
+            article={article}
+          />
+        )}
+      </div>
+    );
+  }
+}
+
 
 export default ArticleList;

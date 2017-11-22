@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import pickBy from 'lodash.pickby';
 import ArticleList from './ArticleList';
 import SearchBar from './SearchBar';
 import Timestamp from './Timestamp';
 
-class App extends Component {
+class App extends PureComponent {
   static childContextTypes = {
     store: PropTypes.object
   };
@@ -16,8 +16,13 @@ class App extends Component {
     };
   }
 
+  appState = () => {
+    const { articles, searchTerm } = this.props.store.getState();
+    return { articles, searchTerm };
+  }
+
   onStoreChange = () => {
-    this.setState(this.props.store.getState());
+    this.setState(this.appState());
   }
 
   componentDidMount() {
@@ -30,7 +35,7 @@ class App extends Component {
   }
 
   // this only returns the data so we need to subscribe to it for changes
-  state = this.props.store.getState();
+  state = this.appState()
 
   render() {
     let { searchTerm, articles } = this.state;

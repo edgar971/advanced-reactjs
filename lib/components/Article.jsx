@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import storeProvider from './storeProvider';
 
@@ -27,26 +27,29 @@ const styles = {
 
 const displayDate = (date) => new Date(date).toDateString();
 
-const Article = ({ article, author }) => {
-  return (
-    <div style={styles.article}>
-      <h3 style={styles.title}>{article.title}</h3>
-      <p style={styles.date}><small>{displayDate(article.date)}</small></p>
-      <div style={styles.author}><a href={author.website}>{`${author.firstName} ${author.lastName}`}</a></div>
-      <div style={styles.body}>
-        <p>{article.body}</p>
-      </div>
-    </div>
-  );
-};
+class Article extends PureComponent {
+  static propTypes = {
+    article: PropTypes.shape({
+      date: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      body: PropTypes.string.isRequired
+    })
+  };
 
-Article.propTypes = {
-  article: PropTypes.shape({
-    date: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    body: PropTypes.string.isRequired
-  })
-};
+  render() {
+    const { article, author } = this.props;
+    return (
+      <div style={styles.article}>
+        <h3 style={styles.title}>{article.title}</h3>
+        <p style={styles.date}><small>{displayDate(article.date)}</small></p>
+        <div style={styles.author}><a href={author.website}>{`${author.firstName} ${author.lastName}`}</a></div>
+        <div style={styles.body}>
+          <p>{article.body}</p>
+        </div>
+      </div>
+    );
+  }
+}
 
 function extraProps(store, originalProps) {
   return {
