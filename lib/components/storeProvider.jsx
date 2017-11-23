@@ -17,7 +17,6 @@ const storeProvider = (extraProps = () => ({})) => (Component) => {
     onStoreChange = () => {
       if(this.subscriptionId) {
         this.setState(this.usedState());
-        console.log(this.state);
       }
     }
 
