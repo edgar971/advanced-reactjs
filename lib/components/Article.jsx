@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import storeProvider from './storeProvider';
+import CommentList from './CommentList';
 
 const styles = {
   article: {
@@ -12,16 +13,20 @@ const styles = {
   },
   title: {
     fontWeight: 'bold',
+    marginBottom: 0
   },
   date: {
     fontSize: '.85em',
+    margin: 0
   },
   author: {
-    paddingTop: 10,
     paddingBottom: 10
   },
   body: {
     paddingLeft: 20
+  },
+  comments: {
+    paddingLeft: 40
   }
 };
 
@@ -37,7 +42,7 @@ class Article extends PureComponent {
   };
 
   render() {
-    const { article, author } = this.props;
+    const { article, author, comments } = this.props;
     return (
       <div style={styles.article}>
         <h3 style={styles.title}>{article.title}</h3>
@@ -46,6 +51,9 @@ class Article extends PureComponent {
         <div style={styles.body}>
           <p>{article.body}</p>
         </div>
+        <div style={styles.comments} >
+          <CommentList comments={comments} />
+        </div>
       </div>
     );
   }
@@ -53,7 +61,8 @@ class Article extends PureComponent {
 
 function extraProps(store, originalProps) {
   return {
-    author: store.lookupAuthor(originalProps.article.authorId)
+    author: store.lookupAuthor(originalProps.article.authorId), 
+    comments: store.getArticleComments(originalProps.article.id)
   };
 }
 
