@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import storeProvider from './storeProvider';
 
-class Timestamp extends Component {
+class Timestamp extends PureComponent {
   static timeDisplay = (timestamp) => 
-    timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'});
+    timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
   render() {
     return (

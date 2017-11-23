@@ -10,19 +10,21 @@ class App extends PureComponent {
     store: PropTypes.object
   };
 
+  appState = () => {
+    const { articles, searchTerm } = this.props.store.getState();
+    return { articles, searchTerm };
+  }
+  
+  state = this.appState()
+  
   getChildContext() {
     return {
       store: this.props.store
     };
   }
 
-  appState = () => {
-    const { articles, searchTerm } = this.props.store.getState();
-    return { articles, searchTerm };
-  }
-
   onStoreChange = () => {
-    this.setState(this.appState());
+    this.setState(this.appState);
   }
 
   componentDidMount() {
@@ -31,11 +33,8 @@ class App extends PureComponent {
   }
 
   componentWillUnmount() {
-    this.props.state.unsubscribe(this.subscriptionId);
+    this.props.store.unsubscribe(this.subscriptionId);
   }
-
-  // this only returns the data so we need to subscribe to it for changes
-  state = this.appState()
 
   render() {
     let { searchTerm, articles } = this.state;
@@ -51,7 +50,9 @@ class App extends PureComponent {
       <div>
         <Timestamp />
         <SearchBar />
-        <ArticleList articles={articles} />
+        <ArticleList 
+          articles={articles} 
+        />
       </div>
     );
   }

@@ -1,17 +1,23 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-const storeProvider = (extraProps = () => {}) => (Component) => {
+const storeProvider = (extraProps = () => ({})) => (Component) => {
   return class extends PureComponent {
+    static displayName = `${Component.name}Container`;
     static contextTypes = {
       store: PropTypes.object
     };
+    
+    usedState = () => {
+      return extraProps(this.context.store, this.props);
+    }
 
-    static displayName = `${Component.name}Container`;
+    state = this.usedState();
 
     onStoreChange = () => {
       if(this.subscriptionId) {
         this.setState(this.usedState());
+        console.log(this.state);
       }
     }
 
@@ -22,10 +28,6 @@ const storeProvider = (extraProps = () => {}) => (Component) => {
     componentWillUnmount() {
       this.context.store.unsubscribe(this.subscriptionId);
       this.subscriptionId = null;
-    }
-
-    usedState = () => {
-      return extraProps(this.context.store, this.props);
     }
 
     render() {
