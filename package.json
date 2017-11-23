@@ -27,7 +27,14 @@
   "babel": {
     "presets": [
       "react",
-      ["env", { "targets": { "node": "current" }}],
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ],
       "stage-2"
     ],
     "plugins": [
@@ -38,17 +45,19 @@
   "scripts": {
     "dev": "NODE_PATH=./lib pm2 start lib/server.js --watch --interpreter babel-node",
     "webpack": "webpack -wd",
-    "test": "jest --watch",
+    "test": "NODE_PATH=./lib NODE_ENV=test mocha --opts ./test/mocha.opts",
     "build:webpack": "webpack -p",
     "build:node": "babel lib -d build --copy-files",
     "start:prod": "NODE_ENV=production NODE_PATH=./build pm2 start build/server.js -i max --name prod-node-app"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.2",
+    "chai": "^4.1.2",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "eslint-plugin-react": "^7.4.0",
-    "jest": "^21.2.1",
-    "react-test-renderer": "^16.1.1"
+    "mocha": "^4.0.1",
+    "react-test-renderer": "^16.1.1",
+    "sinon": "^4.1.2"
   }
 }

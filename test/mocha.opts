@@ -1,0 +1,7 @@
+--require chai 
+--require sinon  
+--recursive 
+--reporter spec
+--require babel-core/register
+
+!(node_modules)/__specs__/**/*.specs.js* 
