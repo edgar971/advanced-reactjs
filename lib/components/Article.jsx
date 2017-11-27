@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import storeProvider from './storeProvider';
 import CommentList from './CommentList';
+import CommentBox from './CommentBox';
 
 const styles = {
   article: {
@@ -53,7 +54,9 @@ class Article extends PureComponent {
         </div>
         <div style={styles.comments} >
           <CommentList comments={comments} />
+          <CommentBox articleId={article.id} />
         </div>
+
       </div>
     );
   }
@@ -62,7 +65,7 @@ class Article extends PureComponent {
 function extraProps(store, originalProps) {
   return {
     author: store.lookupAuthor(originalProps.article.authorId), 
-    comments: store.getArticleComments(originalProps.article.id)
+    comments: store.getArticleComments(originalProps.article.id),
   };
 }
 
