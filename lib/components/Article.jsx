@@ -56,7 +56,6 @@ class Article extends PureComponent {
           <CommentList comments={comments} />
           <CommentBox articleId={article.id} />
         </div>
-
       </div>
     );
   }

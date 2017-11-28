@@ -26,7 +26,6 @@ class CommentBox extends PureComponent {
     this.setState(state);
   }
 
-
   render() {
     return (
       <div>
